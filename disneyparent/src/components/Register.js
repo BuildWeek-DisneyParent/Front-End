@@ -58,8 +58,17 @@ const initialRegForm = {
   password: ""
 };
 
-const addRegDetails = (formValues, ) => {
+const addRegDetails = (formValues, doSomething) => {
 
+
+  const detailsToPost = {
+    username: formValues.username,
+    fullname: formValues.fullname,
+    email: formValues.email,
+    password: formValues.password
+  };
+
+  axios.post(formApi, detailsToPost)
 }
 
 function RegisterForm() {
