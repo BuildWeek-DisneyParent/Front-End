@@ -1,7 +1,7 @@
 import React from 'react';
-import Profile from "./Profile"
-import EditProfile from "./EditProfile"
-import {BrowserRouter as Route} from 'react-router-dom'
+import Profile from "./Profile";
+import EditProfile from "./EditProfile";
+import {BrowserRouter as Route} from 'react-router-dom';
 import './App.css';
 
 function App() {
