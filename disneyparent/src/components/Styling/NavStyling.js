@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-export const NavigationStyle = styled.header `
+export const NavigationStyle = styled.header`
 display: flex;
 justify-content: space-between;
 margin: 1% 5%;
@@ -24,6 +24,6 @@ nav {
         text-decoration: none;
         color: black;
     }
-}
+
 }
 `;

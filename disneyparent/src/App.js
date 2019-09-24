@@ -15,8 +15,6 @@ function App() {
       <Route path="/editprofile" component={EditProfile}/>
       <RegisterForm />
       <LoginForm />
-
-      
     </div>
   );
 }

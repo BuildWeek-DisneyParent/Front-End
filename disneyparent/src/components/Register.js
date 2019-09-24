@@ -2,6 +2,11 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
+import axios from "axios";
+
+
+
+
 import registerBackground from './img/registerBackground.png'
 
 // Custom Styles
@@ -23,6 +28,10 @@ const FormDiv = styled.div`
   margin: 10em 0;
   padding: 5em 0;
 
+  @media phone {
+    background: #222;
+  }
+
   input {
     width: 250px;
     height: 40px;
@@ -39,10 +48,25 @@ const FormDiv = styled.div`
   }
 `;
 
+// GET and POST Api Points
+// const formApi = 'https://example.com'
+
+const initialRegForm = {
+  username: "",
+  fullname: "",
+  email: "",
+  password: ""
+};
+
+const addRegDetails = (formValues, ) => {
+
+}
+
 function RegisterForm() {
   return (
     <div>
       <Formik
+        initialValues={initialRegForm}
         render={props => {
           return (
             <Form>

@@ -6,7 +6,6 @@ import signInBackground from './img/signInBackground.png';
 import { Link } from 'react-router-dom';
 
 // Custom Styles
-
 const FormContainer = styled.div`
   display: flex;
   margin: 0 auto;
@@ -50,10 +49,18 @@ const FormDiv = styled.div`
   }
 `;
 
+
+
+const initialRegForm = {
+  username: "",
+  password: ""
+}
+
 function LoginForm() {
   return (
     <div>
       <Formik
+        initialValues={initialRegForm}
         render={props => {
           return (
             <Form>
@@ -75,7 +82,9 @@ function LoginForm() {
                     placeholder="Password"
                   />
                   <Button color="primary">Sign In</Button>
-                  <p>Are you a second parent? <Link>Login</Link></p>
+                  <p>Are you a second parent? 
+                    <Link to="/sp-login"> Login </Link>
+                  </p>
                 </FormDiv>
               </FormContainer>
             </Form>
