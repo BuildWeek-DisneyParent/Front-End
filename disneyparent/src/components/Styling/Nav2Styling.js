@@ -19,6 +19,7 @@ nav {
         font-size:2rem;
         text-decoration: none;
         margin: 0 2%;
+        color: black;
         
     }
 input {
@@ -26,6 +27,7 @@ font-family: 'raleway';
 width: 194px;
 height: 42px;
 left: 1117px;
+padding: 1%;
 top: 195px;
 border: 1px solid #000000;
 box-sizing: border-box;

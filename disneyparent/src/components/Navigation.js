@@ -8,8 +8,8 @@ const Navigation = () => {
         <img src={imagedisney} alt="disney" />
         <nav>
             <a href="/">Our Story</a>
-            <a href="/">Sign Up</a>
-            <a href="/">Sign In</a>
+            <a href="/">Profile</a>
+            <a href="/">Sign Out</a>
         </nav>
     </NavigationStyle>
     )

@@ -23,6 +23,9 @@ nav {
         align-items: center;
         text-decoration: none;
         color: black;
+        :hover {
+            border-bottom: 5px solid #00BD9D;
+        }
     }
 }
 }

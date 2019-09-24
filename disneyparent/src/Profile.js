@@ -10,8 +10,10 @@ const Profile = () => {
 <div>
     <Navigation />
     <Navigation2 />
+    <div className= "mainprofile">
     <ProfileDes />
     <PostRequest />
+    </div>
     <Footer />
 
 </div>

@@ -7,8 +7,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Profile />
+      {/* <Profile /> */}
+      <EditProfile />
       <Route exact path="/" component={Profile}/>
+      <Route path="/profile" component={Profile}/>
       <Route path="/editprofile" component={EditProfile}/>
     </div>
   );
