@@ -46,7 +46,7 @@ const FormDiv = styled.div`
 `;
 
 // GET and POST Api Points
-// const formApi = 'https://example.com'
+// const formApi = 'https://example.com';
 
 const initialRegForm = {
   username: "",
@@ -98,6 +98,7 @@ function RegisterForm() {
   const [userList, setUserList] = useState([]);
 
   const addRegDetails = (formValues, actions) => {
+    
     const detailsToPost = {
       username: formValues.username,
       fullname: formValues.fullname,
@@ -119,7 +120,7 @@ function RegisterForm() {
 
   return (
     <div>
-      <RegisterView onSubmit={detailsToPost} />
+      <RegisterView onSubmit={addRegDetails} />
     </div>
   );
 }

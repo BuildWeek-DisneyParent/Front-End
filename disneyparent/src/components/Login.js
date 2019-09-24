@@ -56,7 +56,7 @@ const initialLogForm = {
   password: ""
 }
 
-function LoginForm() {
+function LoginView() {
   return (
     <div>
       <Formik
@@ -94,6 +94,17 @@ function LoginForm() {
       />
     </div>
   );
+}
+
+
+
+function LoginForm(){
+
+  return (
+    <div>
+      <LoginView />
+    </div>
+  )
 }
 
 export default LoginForm;
