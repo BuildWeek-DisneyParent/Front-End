@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
-import signInBackground from './img/signInBackground.png';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import axios from "axios";
+
+import signInBackground from "./img/signInBackground.png";
 
 // Custom Styles
 const FormContainer = styled.div`
@@ -41,7 +43,7 @@ const FormDiv = styled.div`
   p {
     font-size: 1.5rem;
     margin-top: 2em;
-    
+
     a {
       font-style: italic;
       color: red;
@@ -49,14 +51,12 @@ const FormDiv = styled.div`
   }
 `;
 
-
-
 const initialLogForm = {
   username: "",
   password: ""
-}
+};
 
-function LoginView() {
+function LoginView({ onSubmit }) {
   return (
     <div>
       <Formik
@@ -83,7 +83,8 @@ function LoginView() {
                     placeholder="Password"
                   />
                   <Button color="primary">Sign In</Button>
-                  <p>Are you a second parent? 
+                  <p>
+                    Are you a second parent?
                     <Link to="/sp-login"> Login </Link>
                   </p>
                 </FormDiv>
@@ -96,15 +97,32 @@ function LoginView() {
   );
 }
 
+function LoginForm() {
+  const [loginDetails, setLoginDetails] = useState([]);
 
+  const addLoginDetails = (formValues, actions) => {
 
-function LoginForm(){
+    const detailsToPost = {
+      username: formValues.username,
+      password: formValues.password
+    };
+
+    axios
+      .post(loginApi, detailsToPost)
+      .then(result => {
+        setLoginDetails(loginDetails.concat(result.data));
+        actions.resetForm()
+      })
+      .catch(error => {
+        return error
+      });
+  };
 
   return (
     <div>
-      <LoginView />
+      <LoginView onSubmit={addLoginDetails}/>
     </div>
-  )
+  );
 }
 
 export default LoginForm;

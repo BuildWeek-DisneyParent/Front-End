@@ -95,7 +95,7 @@ function RegisterView({ onSubmit }) {
 }
 
 function RegisterForm() {
-  const [userList, setUserList] = useState([]);
+  const [regDetails, setRegDetails] = useState([]);
 
   const addRegDetails = (formValues, actions) => {
     
@@ -110,7 +110,7 @@ function RegisterForm() {
       .post(formApi, detailsToPost)
       .then(result => {
         // result.data contains inputs gotten from the registration form field
-        setUserList(userList.concat(result.data));
+        setRegDetails(regDetails.concat(result.data));
         actions.resetForm();
       })
       .catch(error => {
