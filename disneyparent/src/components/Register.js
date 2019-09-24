@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
 import axios from "axios";
 
-
-
-
-import registerBackground from './img/registerBackground.png'
+import registerBackground from "./img/registerBackground.png";
 
 // Custom Styles
 
@@ -51,6 +48,27 @@ const FormDiv = styled.div`
 // GET and POST Api Points
 // const formApi = 'https://example.com'
 
+export default function RegisterForm() {
+
+  const [ userList, setUserList] = useState([]);
+
+  const addRegDetails = (formValues, doSomething) => {
+    const detailsToPost = {
+      username: formValues.username,
+      fullname: formValues.fullname,
+      email: formValues.email,
+      password: formValues.password
+    };
+
+    axios
+      .post(formApi, detailsToPost)
+      .then(result => {
+        setUserList(userList.concat(result.data));
+      })
+      .catch();
+  };
+}
+
 const initialRegForm = {
   username: "",
   fullname: "",
@@ -58,20 +76,7 @@ const initialRegForm = {
   password: ""
 };
 
-const addRegDetails = (formValues, doSomething) => {
-
-
-  const detailsToPost = {
-    username: formValues.username,
-    fullname: formValues.fullname,
-    email: formValues.email,
-    password: formValues.password
-  };
-
-  axios.post(formApi, detailsToPost)
-}
-
-function RegisterForm() {
+function RegisterFormView() {
   return (
     <div>
       <Formik
@@ -108,5 +113,3 @@ function RegisterForm() {
     </div>
   );
 }
-
-export default RegisterForm;
