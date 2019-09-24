@@ -49,10 +49,9 @@ const FormDiv = styled.div`
 // const formApi = 'https://example.com'
 
 export default function RegisterForm() {
+  const [userList, setUserList] = useState([]);
 
-  const [ userList, setUserList] = useState([]);
-
-  const addRegDetails = (formValues, doSomething) => {
+  const addRegDetails = (formValues, actions) => {
     const detailsToPost = {
       username: formValues.username,
       fullname: formValues.fullname,
@@ -63,10 +62,20 @@ export default function RegisterForm() {
     axios
       .post(formApi, detailsToPost)
       .then(result => {
+        // result.data contains inputs gotten from the registration form field
         setUserList(userList.concat(result.data));
+        actions.resetForm();
       })
-      .catch();
+      .catch(error => {
+        return error;
+      });
   };
+
+  return (
+    <div>
+      <RegisterFormView onSubmit={detailsToPost} />
+    </div>
+  );
 }
 
 const initialRegForm = {
@@ -76,11 +85,12 @@ const initialRegForm = {
   password: ""
 };
 
-function RegisterFormView() {
+function RegisterFormView({ onSubmit }) {
   return (
     <div>
       <Formik
         initialValues={initialRegForm}
+        onSubmit={onSubmit}
         render={props => {
           return (
             <Form>
