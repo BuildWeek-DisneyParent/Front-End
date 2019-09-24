@@ -2,7 +2,8 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
-import signInBackground from './img/signInBackground.png'
+import signInBackground from './img/signInBackground.png';
+import { Link } from 'react-router-dom';
 
 // Custom Styles
 
@@ -37,6 +38,16 @@ const FormDiv = styled.div`
     padding: 0.5em 2em;
     margin-top: 1em;
   }
+
+  p {
+    font-size: 1.5rem;
+    margin-top: 2em;
+    
+    a {
+      font-style: italic;
+      color: red;
+    }
+  }
 `;
 
 function LoginForm() {
@@ -50,8 +61,10 @@ function LoginForm() {
                 style={{
                   backgroundImage: "url(" + signInBackground + ")",
                   width: "100%",
-                  height: "100%",
-                  backgroundRepeat: "no-repeat"
+                  height: "auto",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover"
                 }}
               >
                 <FormDiv>
@@ -62,6 +75,7 @@ function LoginForm() {
                     placeholder="Password"
                   />
                   <Button color="primary">Sign In</Button>
+                  <p>Are you a second parent? <Link>Login</Link></p>
                 </FormDiv>
               </FormContainer>
             </Form>

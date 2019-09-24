@@ -50,8 +50,10 @@ function RegisterForm() {
                 style={{
                   backgroundImage: "url(" + registerBackground + ")",
                   width: "100%",
-                  height: "100%",
-                  backgroundRepeat: "no-repeat"
+                  height: "auto",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "cover"
                 }}
               >
                 <FormDiv>
