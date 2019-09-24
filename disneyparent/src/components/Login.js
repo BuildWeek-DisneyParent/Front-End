@@ -51,7 +51,7 @@ const FormDiv = styled.div`
 
 
 
-const initialRegForm = {
+const initialLogForm = {
   username: "",
   password: ""
 }
@@ -60,7 +60,8 @@ function LoginForm() {
   return (
     <div>
       <Formik
-        initialValues={initialRegForm}
+        initialValues={initialLogForm}
+        onSubmit={onSubmit}
         render={props => {
           return (
             <Form>

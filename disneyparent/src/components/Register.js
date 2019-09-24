@@ -48,36 +48,6 @@ const FormDiv = styled.div`
 // GET and POST Api Points
 // const formApi = 'https://example.com'
 
-export default function RegisterForm() {
-  const [userList, setUserList] = useState([]);
-
-  const addRegDetails = (formValues, actions) => {
-    const detailsToPost = {
-      username: formValues.username,
-      fullname: formValues.fullname,
-      email: formValues.email,
-      password: formValues.password
-    };
-
-    axios
-      .post(formApi, detailsToPost)
-      .then(result => {
-        // result.data contains inputs gotten from the registration form field
-        setUserList(userList.concat(result.data));
-        actions.resetForm();
-      })
-      .catch(error => {
-        return error;
-      });
-  };
-
-  return (
-    <div>
-      <RegisterFormView onSubmit={detailsToPost} />
-    </div>
-  );
-}
-
 const initialRegForm = {
   username: "",
   fullname: "",
@@ -85,7 +55,7 @@ const initialRegForm = {
   password: ""
 };
 
-function RegisterFormView({ onSubmit }) {
+function RegisterView({ onSubmit }) {
   return (
     <div>
       <Formik
@@ -123,3 +93,35 @@ function RegisterFormView({ onSubmit }) {
     </div>
   );
 }
+
+function RegisterForm() {
+  const [userList, setUserList] = useState([]);
+
+  const addRegDetails = (formValues, actions) => {
+    const detailsToPost = {
+      username: formValues.username,
+      fullname: formValues.fullname,
+      email: formValues.email,
+      password: formValues.password
+    };
+
+    axios
+      .post(formApi, detailsToPost)
+      .then(result => {
+        // result.data contains inputs gotten from the registration form field
+        setUserList(userList.concat(result.data));
+        actions.resetForm();
+      })
+      .catch(error => {
+        return error;
+      });
+  };
+
+  return (
+    <div>
+      <RegisterView onSubmit={detailsToPost} />
+    </div>
+  );
+}
+
+export default RegisterForm;
