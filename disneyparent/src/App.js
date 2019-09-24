@@ -1,12 +1,11 @@
 import React from 'react';
+import Profile from "./components/Profile"
 import './App.css';
-import ProfilePostRequest from "./components/ProfilePostRequest"
 
 function App() {
   return (
     <div className="App">
-      <SearchRequest />
-    <ProfilePostRequest /> 
+      <Profile />
     </div>
   );
 }
