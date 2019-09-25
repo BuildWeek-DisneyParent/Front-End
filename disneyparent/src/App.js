@@ -1,6 +1,7 @@
 import React from 'react';
 import Profile from "./Profile"
 import EditProfile from "./EditProfile"
+import AcceptedCards from "./AcceptedCards"
 import RequestCards from "./RequestCards"
 import {Route} from 'react-router-dom'
 import './App.css';
@@ -14,6 +15,9 @@ function App() {
         <Route
         path="/editprofile"
         render={() => <EditProfile />}/>
+        <Route
+        path="/acceptedrequests"
+        render={() => <AcceptedCards />}/>
         <Route
         path="/availablerequests"
         render={() => <RequestCards />}/>

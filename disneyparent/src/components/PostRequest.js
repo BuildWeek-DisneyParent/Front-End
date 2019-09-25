@@ -16,10 +16,9 @@ const PostRequest= () => {
         <p>Time:</p>
         <input className="posts" type="time"/>
         <p>Number of Kids:</p>
-        <input className="posts" type="number"/>\
+        <input className="posts" type="number"/>
         <div className="buttons">
         <button className="normal">Add</button>
-        <button className="red">Delete</button>
         </div>
     </Form>
 </RequestStyle>

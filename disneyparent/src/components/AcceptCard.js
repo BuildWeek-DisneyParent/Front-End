@@ -1,7 +1,7 @@
 import React from "react";
 import {CardStyle} from "./Styling/CardStyling";
 
-const RequestCard = () => {
+const AcceptCard = () => {
     return (
         <div className="mainstyle">
             <CardStyle>
@@ -14,13 +14,14 @@ const RequestCard = () => {
                         <p>Meeting Place: Fantasyland</p>
                         <p>Time: 10 AM</p>
                         <p>Number of Kids: 4</p>
+                        <button type ="submit" className="btn1">Accept</button>
            </div>
            <input type="text" placeholder="Ask a question.."/>
-           <button>Add</button>
+           <button type ="submit" className="btn2">Add</button>
            </CardStyle>
 
         </div>
     )
 }
 
-export default RequestCard;
+export default AcceptCard;

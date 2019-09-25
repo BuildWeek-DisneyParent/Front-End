@@ -23,13 +23,6 @@ button {
     font-size: 1.8rem;
     margin: 10% 5%;
 }
-        .red {
-            width: 150px;
-            height: 40px;
-            left: 926px;
-            top: 925px;
-            background: #D1321C;
-        }
         .normal {
             width: 150px;
             height: 40px;
@@ -41,7 +34,5 @@ button {
         display: flex;
         flex-flow: column;
     }
-    .buttons {
-        display: flex !important;
-    }
+    
 `

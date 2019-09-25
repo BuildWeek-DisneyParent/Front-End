@@ -8,7 +8,7 @@ const ProfileDes = () => {
 <DesStyle className="mainstyle">
 <img className="blank" src={blank} alt="profile"/>
     <div>
-        <h3>Melissa Roberson</h3>
+        <h3>Melissa Robertson</h3>
             <h4>Parent</h4> 
     </div>
     <div>

@@ -11,7 +11,7 @@ margin: 1% 5%;
    
 }
 img {
-    width:15%;
+    width: 200px;
 }
 
 nav {
