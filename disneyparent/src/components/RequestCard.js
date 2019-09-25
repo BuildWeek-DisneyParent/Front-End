@@ -16,7 +16,7 @@ const RequestCard = () => {
                         <p>Number of Kids: 4</p>
            </div>
            <input type="text" placeholder="Ask a question.."/>
-           <button>Add</button>
+           <button className="btn2">Add</button>
            </CardStyle>
 
         </div>
