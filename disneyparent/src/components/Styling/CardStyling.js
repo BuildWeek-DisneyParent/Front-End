@@ -12,6 +12,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 h4 {
     font-size: 1.8rem;
     margin: 0 0 0 35%;
+    font-family: raleway !important;
 }
 .btn2 {
 width: 146px;
@@ -27,6 +28,7 @@ width: 146px;
 height: 40px;
 left: 1088px;
 top: 766px;
+margin-top: 5%;
 font-size: 1.8rem;
 background: #8BD8D2;
 }
@@ -34,6 +36,7 @@ background: #8BD8D2;
 
 p {
     font-size: 1.8rem;
+    line-height:30px;
 }
 input {
 width: 392px;

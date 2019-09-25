@@ -4,9 +4,12 @@ export const EditStyle = styled.div `
 h4 {
     font-weight: normal;
     font-size: 1.8rem;
+    font-family: raleway !important;
 }
 h3 {
+    margin-top: 10%;
     font-size: 2rem;
+    font-family: raleway !important;
 }
 .blank {
     width: 150px;

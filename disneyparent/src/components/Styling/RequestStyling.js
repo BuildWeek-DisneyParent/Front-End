@@ -3,8 +3,10 @@ import styled from "styled-components";
 export const RequestStyle = styled.div `
 h4 {
     font-size: 2.4rem;
+    font-family: raleway !important;
 }
 p {
+    margin-top: 10%;
     font-size: 1.8rem;
 }
 input {

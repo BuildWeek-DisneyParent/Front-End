@@ -4,9 +4,14 @@ export const DesStyle = styled.div `
 h4 {
     font-weight: normal;
     font-size: 1.8rem;
+    font-family: raleway !important;
+    line-height: 30px;
 }
 h3 {
+    margin-top: 10%;
     font-size: 2rem;
+    font-family: raleway !important;
+    line-height: 30px;
 }
 img {
     width: 150px;
@@ -14,10 +19,9 @@ img {
 button {
 width: 60%;
 height: 40px;
-left: 162px;
-top: 1247px;
 background: #8BD8D2;
 font-size: 1.8rem;
+margin-top: 5%;
 }
 
 p {

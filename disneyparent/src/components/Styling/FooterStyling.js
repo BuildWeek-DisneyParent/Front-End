@@ -31,6 +31,7 @@ export const BottomStyle = styled.footer `
         }
     }
     p{
+        font-size: 1.8rem;
         padding: 2%;
     }
 }
