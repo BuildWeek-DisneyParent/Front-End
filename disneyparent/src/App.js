@@ -1,17 +1,22 @@
 import React from 'react';
 import Profile from "./Profile"
 import EditProfile from "./EditProfile"
-import {BrowserRouter as Route} from 'react-router-dom'
+import RequestCards from "./RequestCards"
+import {Route} from 'react-router-dom'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      {/* <Profile /> */}
-      <EditProfile />
-      <Route exact path="/" component={Profile}/>
-      <Route path="/profile" component={Profile}/>
-      <Route path="/editprofile" component={EditProfile}/>
+      <Route
+        path="/profile"
+        render={() => <Profile />}/>
+        <Route
+        path="/editprofile"
+        render={() => <EditProfile />}/>
+        <Route
+        path="/availablerequests"
+        render={() => <RequestCards />}/>
     </div>
   );
 }

@@ -10,13 +10,16 @@ margin: 1% 5%;
     display: flex;
    
 }
+img {
+    width:15%;
+}
 
 nav {
-    width: 40%;
+    width: 25%;
     display: flex;
     justify-content: space-between;
     align-content: center;
-    font-size: 2.4rem;
+    font-size: 1.6rem;
 
     a {
         display: flex;

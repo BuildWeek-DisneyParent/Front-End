@@ -1,11 +1,12 @@
 import React from "react";
-import mom from "./img/mom.png"
+import blank from "./img/blank.png"
 import {DesStyle} from "./Styling/DesStyling"
+import {Link} from "react-router-dom";
 
 const ProfileDes = () => {
     return (
 <DesStyle className="mainstyle">
-    <img src={mom} alt="profile" />
+<img className="blank" src={blank} alt="profile"/>
     <div>
         <h3>Melissa Roberson</h3>
             <h4>Parent</h4> 
@@ -22,7 +23,7 @@ const ProfileDes = () => {
         <h3>Phone</h3>
             <h4>306-120-2521</h4> 
     </div>
-    <button>Edit</button>
+    <Link to="/editprofile"><button>Edit</button></Link>
 </DesStyle>
     )
 }

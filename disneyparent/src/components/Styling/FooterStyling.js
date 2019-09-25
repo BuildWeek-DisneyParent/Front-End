@@ -14,9 +14,11 @@ export const BottomStyle = styled.footer `
         justify-content: space-around;        
     }
 
+
+
     nav { 
         width: 20%;
-        font-size: 2.4rem;
+        font-size: 1.8rem;
         display: flex;
         flex-direction: column;        
         align-items: center;

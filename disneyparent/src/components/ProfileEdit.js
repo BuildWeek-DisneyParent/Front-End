@@ -1,5 +1,5 @@
 import React from "react";
-import edit from "./img/edit.png"
+import blank from "./img/blank.png";
 import {Form} from "formik";
 import {EditStyle} from "./Styling/EditStyling.js";
 
@@ -7,8 +7,8 @@ const ProfileEdit = () => {
     return (
 <EditStyle className="mainstyle">
     <Form>
-<div className="momimage">
-    <a href="/"><img src={edit} alt="edit"/></a>
+<div className="image">
+<a href="/"><img className="blank" src={blank} alt="profile"/></a>
     </div>
     <div>
         <h3>Melissa Roberson</h3>
