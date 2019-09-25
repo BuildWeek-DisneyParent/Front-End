@@ -10,11 +10,11 @@ import LoginForm from './components/Login';
 function App() {
   return (
     <div className="App">
-      <Profile />
-      <Route exact path="/" component={Profile}/>
-      <Route path="/editprofile" component={EditProfile}/>
-      <RegisterForm />
-      <LoginForm />
+      <Route exact path="/" render={props => <Profile {...props} />}/>
+      <Route exact path="/editprofile" render={props => <EditProfile {...props} />}/>
+      
+      <Route exact path="/register" render={props => <RegisterForm {...props} />} />
+      <Route exact path="/login" render={props => <LoginForm {...props} />} />
     </div>
   );
 }

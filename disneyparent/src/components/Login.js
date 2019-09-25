@@ -16,7 +16,7 @@ const FormContainer = styled.div`
 `;
 
 const FormDiv = styled.div`
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   width: 500px;
   height: auto;
   display: flex;
@@ -70,7 +70,7 @@ function LoginView({ onSubmit }) {
                 style={{
                   backgroundImage: "url(" + signInBackground + ")",
                   width: "100%",
-                  height: "auto",
+                  height: "100vh",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                   backgroundSize: "cover"
