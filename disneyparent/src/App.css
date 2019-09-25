@@ -232,7 +232,7 @@ h4 {
   font-size: 3rem;
 }
 p {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   /*line-height: 1.4;*/
 }
 .container {
@@ -744,7 +744,7 @@ h4 {
   font-size: 3rem;
 }
 p {
-  font-size: 2.4rem;
+  font-size: 2rem;
   /*line-height: 1.4;*/
 }
 .container {
@@ -757,6 +757,9 @@ p {
   width: 30%;
   padding: 1%;
   margin-top: 3%;
+}
+.disney { 
+  font-style: italic;
 }
 @media (max-width: 500px) {
   .button {

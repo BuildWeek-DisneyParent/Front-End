@@ -16,7 +16,7 @@ export const About = () => {
         <body>
 
     <header>
-        <img src={title} alt="Disney Parent logo" />
+    <Link to="/home"><img src={title} alt="Disney Parent logo" /></Link>
 
         <nav>
             <Link to="/home">Home</Link>
@@ -30,7 +30,31 @@ export const About = () => {
 </section>
 
 <section className="description">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar non sem maecenas dictum congue faucibus vitae eget. Tristique id iaculis elementum in arcu. Nibh pellentesque feugiat erat velit eu congue cursus magnis turpis. Tortor aliquam cras scelerisque lectus nulla egestas. A porttitor etiam velit, id facilisis. Metus amet at elementum ac. Ac velit pretium pulvinar donec diam. Nisl risus molestie diam, faucibus erat urna mauris. Sapien sed lorem vel, pulvinar aliquam. Feugiat risus volutpat sit gravida donec at. Dictum fermentum aliquet phasellus donec vulputate ut. Posuere dolor et congue amet, lobortis consectetur id cursus neque. Vulputate tincidunt blandit vel, laoreet pretium lectus.</p>
+    <p>Imagine a day at Disney. You are enjoying your time with your kids having fun on the rides and meeting characters. Then you come to a ride you have always wanted to go on. Only there is one problem. Your kids are too small to go on. The disappointment is overwhelming, and you wish that you could visit Disney alone to just go on the one ride.</p>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<h3><span className="disney">Disney Parent</span> is the answer!!</h3>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<p>With Disney Parent you can go on those rides that you have always wanted to go on while still being a responsible parent.</p>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<p>• Find other parents who also need childcare
+<br></br>
+• Leave your children with other responsible adults while you get to enjoy those "BIG KID" rides
+<br></br>
+• Feel assurred that all Disney Sitters are safe and have had a background check
+<br></br>
+• See reviews of the Disney Sitter you are wanting to care for your children.</p>
 </section>
 
 <section className="profilepicstop">
@@ -73,7 +97,7 @@ export const About = () => {
 
     <div>
         <img src={jarvise} alt="pic of jarvise"/>
-        <p>Jarvise Billups-Brown<br />Backedn Developer</p>
+        <p>Jarvise Billups-Brown<br />Backend Developer</p>
         <i className="fab fa-github fa-3x"></i>
         <i className="far fa-envelope fa-3x"></i>
     </div>
@@ -88,8 +112,8 @@ export const About = () => {
 
     <nav>
         <Link to ="/home">Home</Link>
-        <a href="/">Sign Up</a>
-        <a href="/">Sign In</a>
+        <a href="/register">Sign Up</a>
+        <a href="/login">Sign In</a>
     </nav>
 
     <p>Team Disney Parent 2019</p>

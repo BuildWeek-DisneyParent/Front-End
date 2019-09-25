@@ -17,10 +17,10 @@ export const Home = () => {
     return (
         <body>
     <header>
-        <img src={title} alt="pic of Disney Parent" />
+    <Link to="/home"><img src={title} alt="pic of Disney Parent" /></Link>
 
         <nav>
-            <Link to="/about">Our Story</Link>
+            <Link to="/ourstory">Our Story</Link>
             <a href="/register">Sign Up</a>
             <a href="/login">Sign In</a>
         </nav>
@@ -93,8 +93,8 @@ export const Home = () => {
 
         <nav>
             <Link to="/about">Our Story</Link>
-            <a href="/">Sign Up</a>
-            <a href="/">Sign In</a>
+            <a href="/register">Sign Up</a>
+            <a href="/login">Sign In</a>
         </nav>
 
         <p>Team Disney Parent 2019</p>
