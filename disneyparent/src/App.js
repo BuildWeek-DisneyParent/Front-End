@@ -6,6 +6,9 @@ import RequestCards from "./RequestCards"
 import {Route} from 'react-router-dom'
 import './App.css';
 
+import RegisterForm from './components/Register';
+import LoginForm from './components/Login';
+
 function App() {
   return (
     <div className="App">
@@ -21,6 +24,13 @@ function App() {
         <Route
         path="/availablerequests"
         render={() => <RequestCards />}/>
+
+<Route exact 
+      path="/register" 
+      render={props => <RegisterForm {...props} />} />
+      <Route exact 
+      path="/login" 
+      render={props => <LoginForm {...props} />} />
     </div>
   );
 }
