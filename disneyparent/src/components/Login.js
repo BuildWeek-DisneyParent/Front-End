@@ -83,10 +83,16 @@ function LoginView({ onSubmit }) {
                     name="password"
                     placeholder="Password"
                   />
-                  <Button type="submit" color="primary">Sign In</Button>
+                  <Button type="submit" color="primary">
+                    Sign In
+                  </Button>
                   <p>
                     Are you a second parent?
                     <Link to="/sp-login"> Login </Link>
+                  </p>
+                  <p>
+                    Or
+                    <Link to="/register"> Register </Link>
                   </p>
                 </FormDiv>
               </FormContainer>

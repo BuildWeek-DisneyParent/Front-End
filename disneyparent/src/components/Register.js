@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
@@ -44,6 +45,16 @@ const FormDiv = styled.div`
     padding: 0.5em 2em;
     margin-top: 1em;
   }
+
+  p {
+    font-size: 1.5rem;
+    margin-top: 2em;
+
+    a {
+      font-style: italic;
+      color: red;
+    }
+  }
 `;
 
 const initialRegForm = {
@@ -84,6 +95,10 @@ function RegisterView({ onSubmit }) {
                   <Button type="submit" color="primary">
                     Register
                   </Button>
+                  <p>
+                    Already have an account?
+                    <Link to="/login"> Login </Link>
+                  </p>
                 </FormDiv>
               </FormContainer>
             </Form>
