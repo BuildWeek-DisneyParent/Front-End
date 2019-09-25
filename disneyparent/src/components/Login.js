@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
-import signInBackground from './img/signInBackground.png';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import axios from "axios";
+import * as Yup from "yup";
+
+import signInBackground from "./img/signInBackground.png";
 
 // Custom Styles
-
 const FormContainer = styled.div`
   display: flex;
   margin: 0 auto;
@@ -14,7 +16,7 @@ const FormContainer = styled.div`
 `;
 
 const FormDiv = styled.div`
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   width: 500px;
   height: auto;
   display: flex;
@@ -42,7 +44,7 @@ const FormDiv = styled.div`
   p {
     font-size: 1.5rem;
     margin-top: 2em;
-    
+
     a {
       font-style: italic;
       color: red;
@@ -50,10 +52,17 @@ const FormDiv = styled.div`
   }
 `;
 
-function LoginForm() {
+const initialLogForm = {
+  username: "",
+  password: ""
+};
+
+function LoginView({ onSubmit }) {
   return (
     <div>
       <Formik
+        initialValues={initialLogForm}
+        onSubmit={onSubmit}
         render={props => {
           return (
             <Form>
@@ -61,7 +70,7 @@ function LoginForm() {
                 style={{
                   backgroundImage: "url(" + signInBackground + ")",
                   width: "100%",
-                  height: "auto",
+                  height: "100vh",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
                   backgroundSize: "cover"
@@ -74,14 +83,54 @@ function LoginForm() {
                     name="password"
                     placeholder="Password"
                   />
-                  <Button color="primary">Sign In</Button>
-                  <p>Are you a second parent? <Link>Login</Link></p>
+                  <Button type="submit" color="primary">
+                    Sign In
+                  </Button>
+                  <p>
+                    Are you a second parent?
+                    <Link to="/sp-login"> Login </Link>
+                  </p>
+                  <p>
+                    Or
+                    <Link to="/register"> Register </Link>
+                  </p>
                 </FormDiv>
               </FormContainer>
             </Form>
           );
         }}
       />
+    </div>
+  );
+}
+
+// Api Endpoint
+const loginEndpoint =
+  "https://buildweek-disneyparent.herokuapp.com/api/auth/login";
+
+function LoginForm() {
+  const [loginDetails, setLoginDetails] = useState([]);
+
+  const addLoginDetails = (formValues, actions) => {
+    const detailsToPost = {
+      username: formValues.username,
+      password: formValues.password
+    };
+
+    axios
+      .post(loginEndpoint, detailsToPost)
+      .then(result => {
+        setLoginDetails(loginDetails.concat(result.data));
+        actions.resetForm();
+      })
+      .catch(error => {
+        return error;
+      });
+  };
+
+  return (
+    <div>
+      <LoginView onSubmit={addLoginDetails} />
     </div>
   );
 }
