@@ -96,7 +96,7 @@ function RegisterView({ onSubmit }) {
                     Register
                   </Button>
                   <p>
-                    Already have an account?
+                    Already have an account? 
                     <Link to="/login"> Login </Link>
                   </p>
                 </FormDiv>
