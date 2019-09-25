@@ -1,7 +1,9 @@
 import React from 'react';
-import Profile from "./Profile";
-import EditProfile from "./EditProfile";
-import { Route } from 'react-router-dom';
+import Profile from "./Profile"
+import EditProfile from "./EditProfile"
+import AcceptedCards from "./AcceptedCards"
+import RequestCards from "./RequestCards"
+import {Route} from 'react-router-dom'
 import './App.css';
 
 import RegisterForm from './components/Register';
@@ -10,15 +12,20 @@ import LoginForm from './components/Login';
 function App() {
   return (
     <div className="App">
-      <Route exact
-        path="/"
-        render={props => <Profile {...props} />}
-      />
-      <Route exact
+      <Route
+        path="/profile"
+        render={() => <Profile />}/>
+        <Route
         path="/editprofile"
-        render={props => <EditProfile {...props} />} />
+        render={() => <EditProfile />}/>
+        <Route
+        path="/acceptedrequests"
+        render={() => <AcceptedCards />}/>
+        <Route
+        path="/availablerequests"
+        render={() => <RequestCards />}/>
 
-      <Route exact 
+<Route exact 
       path="/register" 
       render={props => <RegisterForm {...props} />} />
       <Route exact 

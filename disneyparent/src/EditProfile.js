@@ -10,8 +10,10 @@ const EditProfile = () => {
 <div>
     <Navigation />
     <Navigation2 />
+    <div className="mainprofile">
     <ProfileEdit />
     <PostRequest />
+    </div>
     <Footer />
 
 </div>
