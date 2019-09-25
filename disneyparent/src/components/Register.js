@@ -46,9 +46,6 @@ const FormDiv = styled.div`
   }
 `;
 
-// GET and POST Api Points
-// const formApi = 'https://example.com';
-
 const initialRegForm = {
   username: "",
   fullname: "",
@@ -84,7 +81,9 @@ function RegisterView({ onSubmit }) {
                     name="password"
                     placeholder="Password"
                   />
-                  <Button color="primary">Register</Button>
+                  <Button type="submit" color="primary">
+                    Register
+                  </Button>
                 </FormDiv>
               </FormContainer>
             </Form>
@@ -95,11 +94,14 @@ function RegisterView({ onSubmit }) {
   );
 }
 
+// Api Endpoint
+const regEndpoint =
+  "https://buildweek-disneyparent.herokuapp.com/api/auth/register";
+
 function RegisterForm() {
   const [regDetails, setRegDetails] = useState([]);
 
   const addRegDetails = (formValues, actions) => {
-    
     const detailsToPost = {
       username: formValues.username,
       fullname: formValues.fullname,
@@ -108,7 +110,7 @@ function RegisterForm() {
     };
 
     axios
-      .post(formApi, detailsToPost)
+      .post(regEndpoint, detailsToPost)
       .then(result => {
         // result.data contains inputs gotten from the registration form field
         setRegDetails(regDetails.concat(result.data));

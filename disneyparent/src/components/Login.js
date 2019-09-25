@@ -83,7 +83,7 @@ function LoginView({ onSubmit }) {
                     name="password"
                     placeholder="Password"
                   />
-                  <Button color="primary">Sign In</Button>
+                  <Button type="submit" color="primary">Sign In</Button>
                   <p>
                     Are you a second parent?
                     <Link to="/sp-login"> Login </Link>
@@ -98,30 +98,33 @@ function LoginView({ onSubmit }) {
   );
 }
 
+// Api Endpoint
+const loginEndpoint =
+  "https://buildweek-disneyparent.herokuapp.com/api/auth/login";
+
 function LoginForm() {
   const [loginDetails, setLoginDetails] = useState([]);
 
   const addLoginDetails = (formValues, actions) => {
-
     const detailsToPost = {
       username: formValues.username,
       password: formValues.password
     };
 
     axios
-      .post(loginApi, detailsToPost)
+      .post(loginEndpoint, detailsToPost)
       .then(result => {
         setLoginDetails(loginDetails.concat(result.data));
-        actions.resetForm()
+        actions.resetForm();
       })
       .catch(error => {
-        return error
+        return error;
       });
   };
 
   return (
     <div>
-      <LoginView onSubmit={addLoginDetails}/>
+      <LoginView onSubmit={addLoginDetails} />
     </div>
   );
 }
