@@ -8,6 +8,8 @@ import { About } from "./About";
 import { Route } from 'react-router-dom'
 import './App.css';
 
+import Posts from './components/Posts';
+
 import RegisterForm from './components/Register';
 import LoginForm from './components/Login';
 import VBORegisterForm from './components/VBORegister';
@@ -45,6 +47,10 @@ function App() {
       <Route 
         path="/vbo-login"
         render={props => <VBOLoginForm {...props} />}
+      />
+      <Route 
+        path="/posts"
+        render={props => <Posts {...props} />}
       />
     </div>
   );

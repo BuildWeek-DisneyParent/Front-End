@@ -7,7 +7,7 @@ const Navigation2 = () => {
 <Navigation2Style>
 <nav>
 <NavLink to="/profile"><button>Post Request</button></NavLink>
-<NavLink to="/availablerequests">View Available Request</NavLink>
+<NavLink to="/availablerequests">View Available Requests</NavLink>
     <a href="/acceptedrequests">Accepted Requests</a>
     <input type="search" placeholder="Find a request..."/>
 </nav>
