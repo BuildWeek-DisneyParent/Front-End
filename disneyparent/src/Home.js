@@ -21,8 +21,8 @@ export const Home = () => {
 
         <nav>
             <Link to="/ourstory">Our Story</Link>
-            <a href="/register" target="_blank">Sign Up</a>
-                    <a href="/login" target="_blank">Sign In</a>
+                    <Link to="/register" target="_blank">Sign Up</Link>
+                    <Link to="/login" target="_blank">Sign In</Link>
         </nav>
     </header>
 
