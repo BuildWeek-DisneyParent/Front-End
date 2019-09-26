@@ -87,7 +87,8 @@ const initialDetails = {
   email: ''
 }
 
-function VBORegisterView() {
+
+function VBORegisterForm() {
 
   const [regDetails, setRegDetails] = useState(initialDetails);
 
@@ -126,29 +127,29 @@ function VBORegisterView() {
                   <div>
                     <h5>Company Details</h5>
                     <InputConDiv className="inputCon">
-                      <Field 
+                      <Field
                         onChange={e => handleChange(e)}
-                      type="text" name="businessname" placeholder="Business Name" />
-                      <Field onChange={e => handleChange(e)}type="text" name="industry" placeholder="Industry" />
+                        type="text" name="businessname" placeholder="Business Name" />
+                      <Field onChange={e => handleChange(e)} type="text" name="industry" placeholder="Industry" />
                     </InputConDiv>
                     <InputConDiv className="inputCon">
-                      <Field onChange={e => handleChange(e)}type="text" name="address" placeholder="Address" />
-                      <Field onChange={e => handleChange(e)}type="text" name="years_of_operation" placeholder="Years of Operation" />
+                      <Field onChange={e => handleChange(e)} type="text" name="address" placeholder="Address" />
+                      <Field onChange={e => handleChange(e)} type="text" name="years_of_operation" placeholder="Years of Operation" />
                     </InputConDiv>
                     <InputConDiv className="inputCon">
-                      <Field onChange={e => handleChange(e)}type="text" name="no_of_employees" placeholder="Number of Employees" />
-                      <Field onChange={e => handleChange(e)}type="text" name="state" placeholder="State" />
+                      <Field onChange={e => handleChange(e)} type="text" name="no_of_employees" placeholder="Number of Employees" />
+                      <Field onChange={e => handleChange(e)} type="text" name="state" placeholder="State" />
                     </InputConDiv>
                   </div>
                   <div>
                     <h5>Principal Contact</h5>
                     <InputConDiv className="inputCon">
-                      <Field onChange={e => handleChange(e)}type="text" name="fullname" placeholder="Full Name" />
-                      <Field onChange={e => handleChange(e)}type="text" name="position" placeholder="Position" />
+                      <Field onChange={e => handleChange(e)} type="text" name="fullname" placeholder="Full Name" />
+                      <Field onChange={e => handleChange(e)} type="text" name="position" placeholder="Position" />
                     </InputConDiv>
                     <InputConDiv className="inputCon">
-                      <Field onChange={e => handleChange(e)}type="text" name="phone" placeholder="Phone" />
-                      <Field onChange={e => handleChange(e)}type="text" name="email" placeholder="Email" />
+                      <Field onChange={e => handleChange(e)} type="text" name="phone" placeholder="Phone" />
+                      <Field onChange={e => handleChange(e)} type="text" name="email" placeholder="Email" />
                     </InputConDiv>
                   </div>
                   <Button type="submit" color="primary">
@@ -164,15 +165,6 @@ function VBORegisterView() {
           );
         }}
       />
-    </div>
-  );
-}
-
-function VBORegisterForm() {
-
-  return (
-    <div>
-      <VBORegisterView />
     </div>
   );
 }
