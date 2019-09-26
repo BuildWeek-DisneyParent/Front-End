@@ -16,19 +16,23 @@ import VBOLoginForm from './components/VBOLogin';
 function App() {
   return (
     <div className="App">
-      <Route path="/home" component= {Home}/>
-      <Route path="/ourstory" component={About} />
-      <Route path="/logout" component={LoginForm} />
+      <Route exact path="/" component= {Home}/>
+      <Route exact path="/ourstory" component={About} />
+      <Route exact path="/logout" component={LoginForm} />
       <Route
+        exact
         path="/profile"
         render={() => <Profile />} />
       <Route
+        exact
         path="/editprofile"
         render={() => <EditProfile />} />
       <Route
+        exact
         path="/acceptedrequests"
         render={() => <AcceptedCards />} />
       <Route
+        exact
         path="/availablerequests"
         render={() => <RequestCards />} />
 
