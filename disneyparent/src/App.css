@@ -565,10 +565,11 @@ footer p {
     padding-bottom: 10%;
     font-size: 2.4rem;
   }
+}
   .block_four .sitter h3 {
     font-size: 2.4rem;
   }
-}
+
 .block_four button {
   background-color: #49C6E6;
   color: #FFFBFA;
