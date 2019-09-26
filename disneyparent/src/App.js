@@ -10,6 +10,8 @@ import './App.css';
 
 import RegisterForm from './components/Register';
 import LoginForm from './components/Login';
+import VBORegisterForm from './components/VBORegister';
+import VBOLoginForm from './components/VBOLogin';
 
 function App() {
   return (
@@ -36,6 +38,14 @@ function App() {
       <Route exact
         path="/login"
         render={props => <LoginForm {...props} />} />
+        <Route exact 
+        path="/vbo-register" 
+        render={props => <VBORegisterForm {...props} />}
+        />
+      <Route exact
+        path="/vbo-login"
+        render={props => <VBOLoginForm {...props} />}
+      />
     </div>
   );
 }

@@ -34,10 +34,10 @@ const FormDiv = styled.div`
   input {
     width: 250px;
     height: 40px;
-    border: none;
     padding: 1em;
     margin: 1.2em;
     font-size: 1.2rem;
+    border: 0.1em solid #ababab;
   }
 
   button {
