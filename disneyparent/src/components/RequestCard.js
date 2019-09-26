@@ -18,10 +18,8 @@ const RequestCard = (props) => {
                     <p>Time: {props.time}</p>
                     <p>Number of Kids: {props.kids}</p>
            </div>
-           <div className="second">
-                                <button className="btn1">Accept</button>
+           
                    <input type="text" placeholder="Ask a question.."/>
-                   </div>
                    <button className="btn2">Add</button>
                    <button className="btn3">Delete</button>
            </CardStyle>

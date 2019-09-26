@@ -10,7 +10,7 @@ const AcceptCard = (props) => {
                             <h4>9/28/2019 at 12:01pm</h4>
                             </div>
                             <div className="cardinfo">
-                                <p>Title: {props.login.title}</p>
+                                <p>Title: {props.title}</p>
                                 <p>Meeting Place: {props.meeting}</p>
                                 <p>Time: {props.time}</p>
                                 <p>Number of Kids: {props.kids}</p>
