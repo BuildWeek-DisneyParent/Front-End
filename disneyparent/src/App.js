@@ -17,36 +17,32 @@ function App() {
   return (
     <div className="App">
       <Route exact path="/" component= {Home}/>
-      <Route exact path="/ourstory" component={About} />
-      <Route exact path="/logout" component={LoginForm} />
+      <Route path="/ourstory" component={About} />
+      <Route path="/logout" component={LoginForm} />
       <Route
-        exact
         path="/profile"
         render={() => <Profile />} />
       <Route
-        exact
         path="/editprofile"
         render={() => <EditProfile />} />
       <Route
-        exact
         path="/acceptedrequests"
         render={() => <AcceptedCards />} />
       <Route
-        exact
         path="/availablerequests"
         render={() => <RequestCards />} />
 
-      <Route exact
+      <Route 
         path="/register"
         render={props => <RegisterForm {...props} />} />
-      <Route exact
+      <Route 
         path="/login"
         render={props => <LoginForm {...props} />} />
-        <Route exact 
+        <Route  
         path="/vbo-register" 
         render={props => <VBORegisterForm {...props} />}
         />
-      <Route exact
+      <Route 
         path="/vbo-login"
         render={props => <VBOLoginForm {...props} />}
       />
