@@ -572,18 +572,13 @@ footer p {
 .block_four button {
   background-color: #49C6E6;
   color: #FFFBFA;
-<<<<<<< HEAD
+
   width: 193px;
 height: 47px;
 font-size: 1.8rem;
   padding: 1%;
   margin-top: 3%;
-=======
-  width: 200px;
-  padding: 1em;
-  margin-top: 1em;
->>>>>>> 35cd0b8aa6b30e6afe10676c1c8fa5a8f67bdaad
-}
+
 @media (max-width: 500px) {
   .block_four button {
     width: 200px;
