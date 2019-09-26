@@ -20,15 +20,9 @@ export const Home = () => {
     <Link to="/home"><img src={title} alt="pic of Disney Parent" /></Link>
 
         <nav>
-<<<<<<< HEAD
-            <Link to="/about">Our Story</Link>
-            <Link to="/register">Sign Up</Link>
-            <Link to="/login">Sign In</Link>
-=======
             <Link to="/ourstory">Our Story</Link>
             <a href="/register" target="_blank">Sign Up</a>
                     <a href="/login" target="_blank">Sign In</a>
->>>>>>> 35cd0b8aa6b30e6afe10676c1c8fa5a8f67bdaad
         </nav>
     </header>
 
@@ -81,21 +75,12 @@ export const Home = () => {
     <section className="block_four">
         <div className="parent">
             <h3>Are you a Parent?</h3>
-<<<<<<< HEAD
-            <Link to= "/login"><button>Start Here</button></Link>
-        </div>
-
-        <div className="sitter">
-            <h3>Want to be a business owner?</h3>
-            <Link to= "/login"><button>Start Here</button></Link>
-=======
             <Link to="/register"><button>Start Here</button></Link> 
         </div>
 
         <div className="sitter">
             <h3>Are you a Volunteer Business Owner?</h3>
             <Link to="/vbo-register"><button>Start Here</button></Link>            
->>>>>>> 35cd0b8aa6b30e6afe10676c1c8fa5a8f67bdaad
         </div>
     </section>  
     
