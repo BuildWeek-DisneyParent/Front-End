@@ -66,6 +66,12 @@ function VBOLoginForm() {
     setLoginDetails({
       ...loginDetails, [evt.target.name]: evt.target.value
     })
+    console.log(`${evt.target.name}, ${evt.target.value}`)
+  }
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    console.log(loginDetails)
   }
 
   return (
@@ -73,7 +79,7 @@ function VBOLoginForm() {
       <Formik
         render={props => {
           return (
-            <Form>
+            <Form onSubmit={e => handleSubmit(e)}>
               <FormContainer
                 style={{
                   backgroundImage: "url(" + volLogin + ")",
