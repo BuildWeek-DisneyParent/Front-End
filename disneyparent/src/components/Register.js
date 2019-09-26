@@ -1,5 +1,5 @@
-import React, { useState } from "react"; 
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
@@ -57,22 +57,40 @@ const FormDiv = styled.div`
   }
 `;
 
-const initialRegForm = {
+const initialDetails = {
   username: "",
   fullname: "",
   email: "",
   password: ""
 };
 
-function RegisterView({ onSubmit }) {
+// Api Endpoint
+const regEndpoint =
+  "https://buildweek-disneyparent.herokuapp.com/api/auth/register";
+
+function RegisterForm() {
+  const [regDetails, setRegDetails] = useState(initialDetails);
+
+  const handleChange = evt => {
+    setRegDetails({
+      ...regDetails,
+      [evt.target.name]: evt.target.value
+    });
+    console.log(`${evt.target.name}, ${evt.target.value}`);
+  };
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    console.log(regDetails);
+  };
+
+
   return (
     <div>
       <Formik
-        initialValues={initialRegForm}
-        onSubmit={onSubmit}
         render={props => {
           return (
-            <Form>
+            <Form onSubmit={e => handleSubmit(e)}>
               <FormContainer
                 style={{
                   backgroundImage: "url(" + registerBackground + ")",
@@ -84,10 +102,26 @@ function RegisterView({ onSubmit }) {
                 }}
               >
                 <FormDiv>
-                  <Field type="text" name="username" placeholder="Username" />
-                  <Field type="text" name="fullname" placeholder="Full Name" />
-                  <Field type="text" name="email" placeholder="Email" />
                   <Field
+                    onChange={e => handleChange(e)}
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                  />
+                  <Field
+                    onChange={e => handleChange(e)}
+                    type="text"
+                    name="fullname"
+                    placeholder="Full Name"
+                  />
+                  <Field
+                    onChange={e => handleChange(e)}
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                  />
+                  <Field
+                    onChange={e => handleChange(e)}
                     type="password"
                     name="password"
                     placeholder="Password"
@@ -96,7 +130,7 @@ function RegisterView({ onSubmit }) {
                     Register
                   </Button>
                   <p>
-                    Already have an account? 
+                    Already have an account?
                     <Link to="/login"> Login </Link>
                   </p>
                 </FormDiv>
@@ -105,40 +139,6 @@ function RegisterView({ onSubmit }) {
           );
         }}
       />
-    </div>
-  );
-}
-
-// Api Endpoint
-const regEndpoint =
-  "https://buildweek-disneyparent.herokuapp.com/api/auth/register";
-
-function RegisterForm() {
-  const [regDetails, setRegDetails] = useState([]);
-
-  const addRegDetails = (formValues, actions) => {
-    const detailsToPost = {
-      username: formValues.username,
-      fullname: formValues.fullname,
-      email: formValues.email,
-      password: formValues.password
-    };
-
-    axios
-      .post(regEndpoint, detailsToPost)
-      .then(result => {
-        // result.data contains inputs gotten from the registration form field
-        setRegDetails(regDetails.concat(result.data));
-        actions.resetForm();
-      })
-      .catch(error => {
-        return error;
-      });
-  };
-
-  return (
-    <div>
-      <RegisterView onSubmit={addRegDetails} />
     </div>
   );
 }
