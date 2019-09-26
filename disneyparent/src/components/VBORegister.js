@@ -74,13 +74,41 @@ const InputConDiv = styled.div`
   display: flex;
 `;
 
+const initialDetails = {
+  businessname: '',
+  industry: '', 
+  address: '', 
+  years_of_operation: '', 
+  no_of_employees: '', 
+  state: '', 
+  fullname: '', 
+  position: '', 
+  phone: '', 
+  email: ''
+}
+
 function VBORegisterView() {
+
+  const [regDetails, setRegDetails] = useState(initialDetails);
+
+  const handleChange = evt => {
+    setRegDetails({
+      ...regDetails, [evt.target.name]: evt.target.value
+    })
+    console.log(`${evt.target.name}, ${evt.target.value}`)
+  }
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    console.log(regDetails)
+  }
+
   return (
     <div>
       <Formik
         render={props => {
           return (
-            <Form>
+            <Form onSubmit={e => handleSubmit(e)}>
               <FormContainer
                 style={{
                   backgroundImage: "url(" + volRegistration + ")",
@@ -98,27 +126,29 @@ function VBORegisterView() {
                   <div>
                     <h5>Company Details</h5>
                     <InputConDiv className="inputCon">
-                      <Field type="text" name="businessname" placeholder="Business Name" />
-                      <Field type="text" name="industry" placeholder="Industry" />
+                      <Field 
+                        onChange={e => handleChange(e)}
+                      type="text" name="businessname" placeholder="Business Name" />
+                      <Field onChange={e => handleChange(e)}type="text" name="industry" placeholder="Industry" />
                     </InputConDiv>
                     <InputConDiv className="inputCon">
-                      <Field type="text" name="address" placeholder="Address" />
-                      <Field type="text" name="years_of_operation" placeholder="Years of Operation" />
+                      <Field onChange={e => handleChange(e)}type="text" name="address" placeholder="Address" />
+                      <Field onChange={e => handleChange(e)}type="text" name="years_of_operation" placeholder="Years of Operation" />
                     </InputConDiv>
                     <InputConDiv className="inputCon">
-                      <Field type="text" name="no_of_employees" placeholder="Number of Employees" />
-                      <Field type="text" name="state" placeholder="State" />
+                      <Field onChange={e => handleChange(e)}type="text" name="no_of_employees" placeholder="Number of Employees" />
+                      <Field onChange={e => handleChange(e)}type="text" name="state" placeholder="State" />
                     </InputConDiv>
                   </div>
                   <div>
                     <h5>Principal Contact</h5>
                     <InputConDiv className="inputCon">
-                      <Field type="text" name="name" placeholder="Full Name" />
-                      <Field type="text" name="position" placeholder="Position" />
+                      <Field onChange={e => handleChange(e)}type="text" name="fullname" placeholder="Full Name" />
+                      <Field onChange={e => handleChange(e)}type="text" name="position" placeholder="Position" />
                     </InputConDiv>
                     <InputConDiv className="inputCon">
-                      <Field type="text" name="phone" placeholder="Phone" />
-                      <Field type="text" name="email" placeholder="Email" />
+                      <Field onChange={e => handleChange(e)}type="text" name="phone" placeholder="Phone" />
+                      <Field onChange={e => handleChange(e)}type="text" name="email" placeholder="Email" />
                     </InputConDiv>
                   </div>
                   <Button type="submit" color="primary">
