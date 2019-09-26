@@ -21,8 +21,8 @@ export const Home = () => {
 
         <nav>
             <Link to="/ourstory">Our Story</Link>
-            <a href="/register">Sign Up</a>
-            <a href="/login">Sign In</a>
+            <a href="/register" target="_blank">Sign Up</a>
+                    <a href="/login" target="_blank">Sign In</a>
         </nav>
     </header>
 
@@ -75,12 +75,12 @@ export const Home = () => {
     <section className="block_four">
         <div className="parent">
             <h3>Are you a Parent?</h3>
-            <button>Start Here</button>
+            <Link to="/register"><button>Start Here</button></Link> 
         </div>
 
         <div className="sitter">
-            <h3>Want to be a Disneysitter?</h3>
-            <button>Start Here</button>
+            <h3>Are you a Volunteer Business Owner?</h3>
+            <Link to="/vbo-register"><button>Start Here</button></Link>            
         </div>
     </section>  
     

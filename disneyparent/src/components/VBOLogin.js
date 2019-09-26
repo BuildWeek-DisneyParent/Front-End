@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 // import * as Yup from "yup";
 
-import signInBackground from "./img/signInBackground.png";
+import volLogin from "./img/volunteer-login.jpg";
 
 // Custom Styles
 const FormContainer = styled.div`
@@ -29,6 +29,7 @@ const FormDiv = styled.div`
   input {
     width: 250px;
     height: 40px;
+    border: none;
     padding: 1em;
     margin: 1.2em;
     font-size: 1.2rem;
@@ -53,15 +54,12 @@ const FormDiv = styled.div`
 `;
 
 const initialDetails = {
-  username: "",
-  password: ""
-};
+  email: '',
+  password: ''
+}
 
-// Api Endpoint
-const loginEndpoint =
-  "https://buildweek-disneyparent.herokuapp.com/api/auth/login";
+function VBOLoginForm() {
 
-function LoginForm() {
   const [loginDetails, setLoginDetails] = useState(initialDetails);
 
   const handleChange = evt => {
@@ -76,23 +74,6 @@ function LoginForm() {
     console.log(loginDetails)
   }
 
-  // const addLoginDetails = (formValues, actions) => {
-  //   const detailsToPost = {
-  //     username: formValues.username,
-  //     password: formValues.password
-  //   };
-
-  //   axios
-  //     .post(loginEndpoint, detailsToPost)
-  //     .then(result => {
-  //       setLoginDetails(loginDetails.concat(result.data));
-  //       actions.resetForm();
-  //     })
-  //     .catch(error => {
-  //       return error;
-  //     });
-  // };
-
   return (
     <div>
       <Formik
@@ -101,7 +82,7 @@ function LoginForm() {
             <Form onSubmit={e => handleSubmit(e)}>
               <FormContainer
                 style={{
-                  backgroundImage: "url(" + signInBackground + ")",
+                  backgroundImage: "url(" + volLogin + ")",
                   width: "100%",
                   height: "100vh",
                   backgroundRepeat: "no-repeat",
@@ -110,23 +91,24 @@ function LoginForm() {
                 }}
               >
                 <FormDiv>
-                  <Field onChange={e => handleChange(e)} type="text" name="username" placeholder="Username" />
+                  <Field 
+                  onChange={e => handleChange(e)}
+                  type="email" 
+                  name="email" 
+                  placeholder="Business Email" 
+                  />
                   <Field
                     onChange={e => handleChange(e)}
                     type="password"
                     name="password"
-                    placeholder="Password"
+                    placeholder="Business Id"
                   />
                   <Button type="submit" color="primary">
                     Sign In
                   </Button>
-                  <p>
-                    Are you a second parent?
-                    <Link to="/sp-login"> Login </Link>
-                  </p>
                   <p>Or</p>
                   <p>
-                    <Link to="/register"> Register </Link>
+                    <Link to="/vbo-register"> Register </Link>
                   </p>
                 </FormDiv>
               </FormContainer>
@@ -138,4 +120,5 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default VBOLoginForm;
+
