@@ -577,7 +577,8 @@ footer p {
 }
 @media (max-width: 500px) {
   .block_four button {
-    width: 20%;
+    width: 200px;
+    padding: 0.2em;
   }
 }
 
