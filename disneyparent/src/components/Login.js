@@ -52,20 +52,53 @@ const FormDiv = styled.div`
   }
 `;
 
-const initialLogForm = {
+const initialDetails = {
   username: "",
   password: ""
 };
 
-function LoginView({ onSubmit }) {
+// Api Endpoint
+const loginEndpoint =
+  "https://buildweek-disneyparent.herokuapp.com/api/auth/login";
+
+function LoginForm() {
+  const [loginDetails, setLoginDetails] = useState(initialDetails);
+
+  const handleChange = evt => {
+    setLoginDetails({
+      ...loginDetails, [evt.target.name]: evt.target.value
+    })
+    console.log(`${evt.target.name}, ${evt.target.value}`)
+  }
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    console.log(loginDetails)
+  }
+
+  // const addLoginDetails = (formValues, actions) => {
+  //   const detailsToPost = {
+  //     username: formValues.username,
+  //     password: formValues.password
+  //   };
+
+  //   axios
+  //     .post(loginEndpoint, detailsToPost)
+  //     .then(result => {
+  //       setLoginDetails(loginDetails.concat(result.data));
+  //       actions.resetForm();
+  //     })
+  //     .catch(error => {
+  //       return error;
+  //     });
+  // };
+
   return (
     <div>
       <Formik
-        initialValues={initialLogForm}
-        onSubmit={onSubmit}
         render={props => {
           return (
-            <Form>
+            <Form onSubmit={e => handleSubmit(e)}>
               <FormContainer
                 style={{
                   backgroundImage: "url(" + signInBackground + ")",
@@ -77,8 +110,9 @@ function LoginView({ onSubmit }) {
                 }}
               >
                 <FormDiv>
-                  <Field type="text" name="username" placeholder="Username" />
+                  <Field onChange={e => handleChange(e)} type="text" name="username" placeholder="Username" />
                   <Field
+                    onChange={e => handleChange(e)}
                     type="password"
                     name="password"
                     placeholder="Password"
@@ -100,37 +134,6 @@ function LoginView({ onSubmit }) {
           );
         }}
       />
-    </div>
-  );
-}
-
-// Api Endpoint
-const loginEndpoint =
-  "https://buildweek-disneyparent.herokuapp.com/api/auth/login";
-
-function LoginForm() {
-  const [loginDetails, setLoginDetails] = useState([]);
-
-  const addLoginDetails = (formValues, actions) => {
-    const detailsToPost = {
-      username: formValues.username,
-      password: formValues.password
-    };
-
-    axios
-      .post(loginEndpoint, detailsToPost)
-      .then(result => {
-        setLoginDetails(loginDetails.concat(result.data));
-        actions.resetForm();
-      })
-      .catch(error => {
-        return error;
-      });
-  };
-
-  return (
-    <div>
-      <LoginView onSubmit={addLoginDetails} />
     </div>
   );
 }
