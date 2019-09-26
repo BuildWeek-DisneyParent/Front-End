@@ -1,52 +1,105 @@
 import React, {useState, useEffect} from "react";
-import {Form, withFormik} from "formik";
+import {Form, Field, withFormik} from "formik";
 import {RequestStyle} from "./Styling/RequestStyling";
-import RequestCard from "./RequestCard";
+import {CardStyle} from "./Styling/CardStyling"
 import axios from "axios";
-// import * as Yup from "yup";
 
-const PostRequest= ({status}) => {
-    const [information, setInfo] = useState([])
-    useEffect(()=> {
-        if (status) {
-            setInfo([status]);
-        }
+
+
+  const PostRequests = ({ errors, touched, values, status }) => {
+    const [information, setInformation] = useState([]);
+    useEffect(() => {
+      if (status) {
+        setInformation([status]);
+      }
     }, [status]);
+  
     return (
-<RequestStyle className="mainstyle">
-    <Form className="forms">
+      <RequestStyle className="mainstyle">
         <h4>Create a new Post Request</h4>
-        <p>Name:</p>
-        <input className="posts" type="text"/>
-        <p>Meeting Place/Ride:</p>
-        <input className="posts" type="text"/>
-        <p>Date:</p>
-        <input className="posts" type="date"/>
-        <p>Time:</p>
-        <input className="posts" type="time"/>
-        <p>Number of Kids:</p>
-        <input className="posts" type="number"/>
-        <div className="buttons">
-        <button className="normal" type="submit">Add</button>
-        </div>
-    </Form>
+        <Form className="forms">
+          <Field className="posts" 
+          type="text" 
+          name="name"
+          />
+          {touched.name && errors.name && (
+            <p className="error">{errors.name}</p>
+          )}
+  
+  <Field className="posts" component="select" name="meeting">
+          <option>Please Choose an Option</option>
+          <option value="Adventureland">Adventureland</option>
+          <option value="Tomorrowland">Tomorrowland</option>
+          <option value="Fantasyland">Fantasyland</option>
+          <option value="Mainstreet">Mainstreet</option>
+          <option value="New Orleans Square">New Orleans Square</option>
+          <option value="Critter Country">Critter Country</option>
+          <option value="Mickey's Toon Town">Micker's Toon Town</option>
+          <option value="Star Wars: Galaxy's Edge">Star Wars: Galaxy's Edge</option>
+          <option value="Frontierland">Frontierland</option>
+          
+        </Field>
+          <Field
+            className="posts"
+            type="date"
+            name="date"
+          />
+          {touched.date && errors.date && (
+            <p className="error">{errors.date}</p>
+          )}
 
-    {information.map(info => (
-        <RequestCard 
-        key={info.id}
-        name={info.name}
-        meeting={info.meeting}
-        date={info.date}
-        time={info.time}
-        kids={info.kids}
-         />
-    ))}
-</RequestStyle>
+            <Field
+            className="posts"
+            type="time"
+            name="time"
+          />
+          {touched.time && errors.time && (
+            <p className="error">{errors.time}</p>
+          )}
+
+            <Field
+            className="posts"
+            type="number"
+            name="kids"
+          />
+          {touched.kids && errors.kids && (
+            <p className="error">{errors.kids}</p>
+          )}
+  
+  
+        <button className="btn2">Add</button>
+        </Form>
+           {information.map(props => {
+            
+            return (
+                <div className="mainstyle">
+                    <CardStyle>
+                            <div className="headers">
+                            <h4>9/28/2019 at 12:01pm</h4>
+                            </div>
+                            <div className="cardinfo">
+                                <p>Name: {props.name}</p>
+                                <p>Meeting Place: {props.meeting}</p>
+                                <p>Time: {props.time}</p>
+                                <p>Number of Kids: {props.kids}</p>
+                   
+                   <input type="text" placeholder="Ask a question.."/>
+                   <button className="btn2">Add</button>
+                   </div>
+                   </CardStyle>
+        
+                </div>)
+                } 
+            )
+          
+        }
+        </RequestStyle>
     )
-}
+      }
+        
+    
 
 const FormikInfo = withFormik({
-    // object destructuring. We could do values.species but we are destructuring it so we can just put species. You see the same thing in Props a lot so instead of props.values you would see {values}
     mapPropsToValues({ id, name, meeting, date, time, kids }) {
       return {
         id: id || "",
@@ -58,15 +111,6 @@ const FormikInfo = withFormik({
       };
     },
   
-    // validationSchema: Yup.object().shape({
-    //   species: Yup.string().required("You silly!!!"),
-    //   size: Yup.string().required(),
-    //   notes: Yup.string(),
-    //   diet: Yup.string()
-    //     .oneOf(["omnivore", "carnivore", "herbivore"])
-    //     .required("Please pick a diet type")
-    // }),
-  
     handleSubmit(values, { setStatus }) {
       axios
         // values is our object with all our data on it.
@@ -77,8 +121,9 @@ const FormikInfo = withFormik({
         })
         .catch(err => console.log(err.response));
     }
-  })(PostRequest); // currying functions in Javascript
+  })(PostRequests); // currying functions in Javascript
   console.log("This is the HOC", FormikInfo);
+
   export default FormikInfo;
 
 

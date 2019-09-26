@@ -242,7 +242,8 @@ p {
 .button {
   background-color: #49C6E6;
   color: #FFFBFA;
-  width: 30%;
+  width: 193px;
+  height: 47px;
   padding: 1%;
   margin-top: 3%;
 }
@@ -571,7 +572,9 @@ footer p {
 .block_four button {
   background-color: #49C6E6;
   color: #FFFBFA;
-  width: 30%;
+  width: 193px;
+height: 47px;
+font-size: 1.8rem;
   padding: 1%;
   margin-top: 3%;
 }

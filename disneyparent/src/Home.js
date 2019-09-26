@@ -20,16 +20,16 @@ export const Home = () => {
     <Link to="/home"><img src={title} alt="pic of Disney Parent" /></Link>
 
         <nav>
-            <Link to="/ourstory">Our Story</Link>
-            <a href="/register">Sign Up</a>
-            <a href="/login">Sign In</a>
+            <Link to="/about">Our Story</Link>
+            <Link to="/register">Sign Up</Link>
+            <Link to="/login">Sign In</Link>
         </nav>
     </header>
 
     <section className="block_one">
         <div className="info">
             <h2> The Babysitting App that maximizes the fun for the family.</h2>
-            <p> Disney Parent allows communication between Disneysitters and Parents to babysit their children while parents can go on the rides of their choosing.</p>
+            <p> Disney Parent allows communication between Parents and volunteer experienced business owners to babysit other parents' children while parents can go on the rides of their choosing.</p>
         </div>
 
         <div className=" images">
@@ -75,12 +75,12 @@ export const Home = () => {
     <section className="block_four">
         <div className="parent">
             <h3>Are you a Parent?</h3>
-            <button>Start Here</button>
+            <Link to= "/login"><button>Start Here</button></Link>
         </div>
 
         <div className="sitter">
-            <h3>Want to be a Disneysitter?</h3>
-            <button>Start Here</button>
+            <h3>Want to be a business owner?</h3>
+            <Link to= "/login"><button>Start Here</button></Link>
         </div>
     </section>  
     
@@ -93,8 +93,8 @@ export const Home = () => {
 
         <nav>
             <Link to="/about">Our Story</Link>
-            <a href="/register">Sign Up</a>
-            <a href="/login">Sign In</a>
+            <Link to="/register">Sign Up</Link>
+            <Link to="/login">Sign In</Link>
         </nav>
 
         <p>Team Disney Parent 2019</p>

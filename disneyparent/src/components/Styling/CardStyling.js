@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const CardStyle = styled.div `
+margin-left:-15%;
 width: 649px;
-height: 451px;
+height: 600px;
 padding: 5%;
 background-color: #fff;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -29,14 +30,30 @@ height: 40px;
 left: 1088px;
 top: 766px;
 margin-top: 5%;
+margin-bottom: 5%;
 font-size: 1.8rem;
 background: #8BD8D2;
 }
-
+.btn3 {
+    width: 146px;
+    height: 40px;
+    left: 1088px;
+    top: 766px;
+    margin-top: 5%;
+    font-size: 1.8rem;
+    background-color: red;
+}
+.second {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
 
 p {
     font-size: 1.8rem;
     line-height:30px;
+    margin-bottom:40px;
 }
 input {
 width: 392px;
