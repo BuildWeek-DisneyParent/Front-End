@@ -53,8 +53,21 @@ const FormDiv = styled.div`
   }
 `;
 
+const initialDetails = {
+  email: '',
+  password: ''
+}
 
-function LoginView() {
+function VBOLoginForm() {
+
+  const [loginDetails, setLoginDetails] = useState(initialDetails);
+
+  const handleChange = evt => {
+    setLoginDetails({
+      ...loginDetails, [evt.target.name]: evt.target.value
+    })
+  }
+
   return (
     <div>
       <Formik
@@ -72,8 +85,14 @@ function LoginView() {
                 }}
               >
                 <FormDiv>
-                  <Field type="email" name="email" placeholder="Business Email" />
+                  <Field 
+                  onChange={e => handleChange(e)}
+                  type="email" 
+                  name="email" 
+                  placeholder="Business Email" 
+                  />
                   <Field
+                    onChange={e => handleChange(e)}
                     type="password"
                     name="password"
                     placeholder="Business Id"
@@ -91,15 +110,6 @@ function LoginView() {
           );
         }}
       />
-    </div>
-  );
-}
-
-function VBOLoginForm() {
-
-  return (
-    <div>
-      <LoginView />
     </div>
   );
 }
