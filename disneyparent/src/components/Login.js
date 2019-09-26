@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 
 import signInBackground from "./img/signInBackground.png";
 

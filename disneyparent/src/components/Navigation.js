@@ -1,15 +1,15 @@
 import React from "react";
 import {NavigationStyle} from './Styling/NavStyling'
 import imagedisney from './img/title.png';
-
+import {Link, NavLink} from "react-router-dom";
 const Navigation = () => {
     return (
 <NavigationStyle>
-        <img src={imagedisney} alt="disney" />
+        <Link to="/home"><img src={imagedisney} alt="disney" /></Link>
         <nav>
-            <a href="/">Our Story</a>
-            <a href="/">Sign Up</a>
-            <a href="/">Sign In</a>
+            <NavLink to="/ourstory">Our Story</NavLink>
+            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/login">Log Out</NavLink>
         </nav>
     </NavigationStyle>
     )
