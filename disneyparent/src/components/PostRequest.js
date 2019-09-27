@@ -18,6 +18,7 @@ import axios from "axios";
       <RequestStyle className="mainstyle">
         <h4>Create a new Post Request</h4>
         <Form className="forms">
+          <p>Name:</p>
           <Field className="posts" 
           type="text" 
           name="name"
@@ -25,7 +26,7 @@ import axios from "axios";
           {touched.name && errors.name && (
             <p className="error">{errors.name}</p>
           )}
-  
+  <p>Meeting place:</p>
   <Field className="posts" component="select" name="meeting">
           <option>Please Choose an Option</option>
           <option value="Adventureland">Adventureland</option>
@@ -39,6 +40,7 @@ import axios from "axios";
           <option value="Frontierland">Frontierland</option>
           
         </Field>
+        <p>Date:</p>
           <Field
             className="posts"
             type="date"
@@ -47,7 +49,7 @@ import axios from "axios";
           {touched.date && errors.date && (
             <p className="error">{errors.date}</p>
           )}
-
+          <p>Time:</p>
             <Field
             className="posts"
             type="time"
@@ -56,7 +58,7 @@ import axios from "axios";
           {touched.time && errors.time && (
             <p className="error">{errors.time}</p>
           )}
-
+          <p>Number of Kids:</p>
             <Field
             className="posts"
             type="number"

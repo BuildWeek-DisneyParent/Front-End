@@ -6,8 +6,9 @@ h4 {
     font-family: raleway !important;
 }
 p {
-    margin-top: 10%;
+    margin-top: 5%;
     font-size: 1.8rem;
+    margin-bottom: 0%;
 }
 input {
     font-size: 2rem;
