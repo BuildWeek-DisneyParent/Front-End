@@ -12,10 +12,11 @@ import twitter from './components/img/twitter.png';
 import facebook from './components/img/facebook.png';
 import github from './components/img/github.png';
 import {Link} from "react-router-dom";
+import {HomeStyle} from "./components/Styling/HomeStyling"
 
 export const Home = () => {
     return (
-        <body>
+        <HomeStyle>
     <header>
     <Link to="/"><img className="logo" src={title} alt="pic of Disney Parent" /></Link>
 
@@ -99,6 +100,6 @@ export const Home = () => {
 
         <p>Team Disney Parent 2019</p>
     </footer>
-    </body>
+    </HomeStyle>
     )
 }
