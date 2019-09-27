@@ -11,8 +11,10 @@ const ProfileEdit = () => {
 <a href="/"><img className="blank" src={blank} alt="profile"/></a>
     </div>
     <div>
-        <h3>Melissa Roberson</h3>
-            <h4>Parent</h4> 
+    <h3>Name:</h3>
+        <input type="text"/>
+        <h3>Type:</h3>
+        <input type="text"/>
     </div>
     <div>
         <h3>About Yourself</h3>
