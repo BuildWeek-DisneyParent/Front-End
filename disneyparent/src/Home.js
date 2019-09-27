@@ -17,7 +17,7 @@ export const Home = () => {
     return (
         <body>
     <header>
-    <Link to="/home"><img src={title} alt="pic of Disney Parent" /></Link>
+    <Link to="/"><img className="logo" src={title} alt="pic of Disney Parent" /></Link>
 
         <nav>
             <Link to="/ourstory">Our Story</Link>
@@ -45,12 +45,12 @@ export const Home = () => {
     </section>
 
     <section className="block_two">
-        <h2>Disney Parent allows you to create posts and receive responses back from certified Disneysitters</h2>
+        <h4>Disney Parent allows you to create posts and receive responses back from certified Disneysitters</h4>
         <div>
             <img src={phone} alt="pic of Disney Parent on mobile phone." />
 
             <div className="features">
-                <h3>Features</h3>
+                <h4>Features</h4>
                 <p>• Register family profile</p>
                 <p>• Create, delete, edit and receive posts </p>
                 <p>• Notifies you when you receive a response back</p>
@@ -92,7 +92,7 @@ export const Home = () => {
         </div>
 
         <nav>
-            <Link to="/about">Our Story</Link>
+            <Link to="/ourstory">Our Story</Link>
             <Link to="/register">Sign Up</Link>
             <Link to="/login">Sign In</Link>
         </nav>

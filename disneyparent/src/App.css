@@ -32,7 +32,7 @@ h5 {
 }
 
 h1 {
-  font-size: 7.2rem;
+  font-size: 7.2rem!important;
   color: #00BD9D;
 }
 
@@ -49,10 +49,14 @@ h4 {
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.8rem!important;
   /*line-height: 1.4;*/
 }
 
+
+.logo {
+  width:80%;
+}
 .container {
   width: 90%;
   margin: 5% auto;
@@ -228,7 +232,7 @@ h3 {
   font-size: 4.8rem;
 }
 h4 {
-  font-size: 3rem;
+  font-size: 3.6rem!important;
 }
 p {
   font-size: 1.8rem;
@@ -265,11 +269,11 @@ header {
   }
 }
 header nav {
-  width: 40%;
+  width: 30%!important;
   display: flex;
   justify-content: space-between;
   align-content: center;
-  font-size: 2.4rem;
+  font-size: 1.8rem!important;
 }
 @media (max-width: 500px) {
   header nav {
@@ -302,7 +306,7 @@ footer div {
 }
 footer nav {
   width: 20%;
-  font-size: 2.4rem;
+  font-size: 1.8rem!important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -385,6 +389,7 @@ footer p {
 }
 .block_one .images .lines {
   margin: 0 auto;
+  width:50%;
 }
 @media (max-width: 500px) {
   .block_one .images .lines {
@@ -412,12 +417,12 @@ footer p {
   margin: 0 auto;
   padding: 2%;
 }
-.block_two h2 {
+.block_two h4 {
   color: #FFFBFA;
   text-align: center;
 }
 @media (max-width: 500px) {
-  .block_two h2 {
+  .block_two h4 {
     font-size: 2.2rem;
   }
 }
@@ -484,7 +489,7 @@ footer p {
   display: flex;
   text-align: center;
   margin: 0 3%;
-  font-size: 2.4rem;
+  font-size: 2rem!important;
 }
 @media (max-width: 500px) {
   .block_three .linzy p {
@@ -513,7 +518,7 @@ footer p {
   justify-content: center;
   text-align: center;
   margin: 0 3%;
-  font-size: 2.4rem;
+  font-size: 2rem!important;
 }
 @media (max-width: 500px) {
   .block_three .michael p {
@@ -566,7 +571,7 @@ footer p {
   }
 }
   .block_four .sitter h3 {
-    font-size: 2.4rem;
+    font-size: 4.8rem;
   }
 
 .block_four button {
@@ -867,7 +872,7 @@ footer p {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  background-color: #E5E5E5;
+  background: rgba(255, 255, 255, 0.7);
   margin: 10%;
 }
 @media (max-width: 500px) {

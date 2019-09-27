@@ -16,10 +16,10 @@ export const About = () => {
         <body>
 
     <header>
-    <Link to="/home"><img src={title} alt="Disney Parent logo" /></Link>
+    <Link to="/"><img className="logo" src={title} alt="Disney Parent logo" /></Link>
 
         <nav>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
             <a href="/register">Sign Up</a>
             <a href="/login">Sign In</a>
         </nav>  
@@ -111,7 +111,7 @@ export const About = () => {
     </div>
 
     <nav>
-        <Link to ="/home">Home</Link>
+        <Link to ="/">Home</Link>
         <a href="/register">Sign Up</a>
         <a href="/login">Sign In</a>
     </nav>
