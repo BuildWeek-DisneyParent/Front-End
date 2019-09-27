@@ -21,8 +21,8 @@ export const About = () => {
 
         <nav>
             <Link to="/">Home</Link>
-            <a href="/register">Sign Up</a>
-            <a href="/login">Sign In</a>
+            <Link to="/register">Sign Up</Link>
+            <Link to="/login">Sign In</Link>
         </nav>  
     </header>
 
@@ -113,8 +113,8 @@ export const About = () => {
 
     <nav>
         <Link to ="/">Home</Link>
-        <a href="/register">Sign Up</a>
-        <a href="/login">Sign In</a>
+        <Link to="/register">Sign Up</Link>
+        <Link to="/login">Sign In</Link>
     </nav>
 
     <p>Team Disney Parent 2019</p>
