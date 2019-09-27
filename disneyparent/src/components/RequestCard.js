@@ -25,7 +25,9 @@ const RequestCard = (props, {addQuestion, removeQuestion}) => {
                     <p>Time: {props.info.time}</p>
                     <p>Number of Kids: {props.info.children}</p>
            </div>
-                    <Form onSubmit= {handleSubmit}>
+                    <Form 
+                    onSubmit= {handleSubmit}
+                    >
                    <input 
                    type="text" 
                    placeholder="Ask a question.." 

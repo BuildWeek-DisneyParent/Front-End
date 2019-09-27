@@ -3,7 +3,7 @@ import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 // import * as Yup from "yup";
 
 import signInBackground from "./img/signInBackground.png";
@@ -58,8 +58,8 @@ const initialDetails = {
 };
 
 // Api Endpoint
-const loginEndpoint =
-  "https://buildweek-disneyparent.herokuapp.com/api/auth/login";
+// const loginEndpoint =
+//   "https://buildweek-disneyparent.herokuapp.com/api/auth/login";
 
 function LoginForm() {
   const [loginDetails, setLoginDetails] = useState(initialDetails);

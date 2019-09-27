@@ -9,10 +9,6 @@ import {info} from "./info"
 const RequestCards = (props) => {
     const [cards, setCards] = useState(info);
 
-    const addQuestion = info => {
-        const newQuestion = [...cards, {info}];
-        setCards(newQuestion);
-    }
     const removeQuestion = index => {
         const newQuestions = [...cards];
         newQuestions.splice(index, 1);
@@ -29,7 +25,9 @@ const RequestCards = (props) => {
         key={index}
         index={index}
         info={info} 
-        addQuestion= {addQuestion}
+        addQuestion= {(info) => {
+            const newQuestion = [...cards, {info}];
+            setCards(newQuestion)}}
         removeQuestion = {removeQuestion}
         />
     ))}
@@ -38,5 +36,5 @@ const RequestCards = (props) => {
 
 </div>
     )
-}
+        }
 export default RequestCards;
