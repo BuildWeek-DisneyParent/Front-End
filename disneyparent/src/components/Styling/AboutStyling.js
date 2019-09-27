@@ -218,6 +218,16 @@ header nav a {
   color: black;
   font-size: 1.8rem;
 }
+.logo {
+    width:80%;
+  }
+  
+  @media screen and (max-width:500px) {
+    .logo {
+      width: 60% !important;
+    }
+  }
+
 footer {
   justify-content: center;
   display: flex;
