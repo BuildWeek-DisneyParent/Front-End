@@ -1,7 +1,6 @@
 import React from 'react';
 import Profile from "./Profile"
 import EditProfile from "./EditProfile"
-import AcceptedCards from "./AcceptedCards"
 import RequestCards from "./RequestCards"
 import { Home } from "./Home";
 import { About } from "./About";

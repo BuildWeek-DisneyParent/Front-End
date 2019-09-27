@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
-import axios from "axios";
+// import axios from "axios";
 // import * as Yup from "yup";
 
 import registerBackground from "./img/registerBackground.png";
@@ -65,8 +65,8 @@ const initialDetails = {
 };
 
 // Api Endpoint
-const regEndpoint =
-  "https://buildweek-disneyparent.herokuapp.com/api/auth/register";
+// const regEndpoint =
+//   "https://buildweek-disneyparent.herokuapp.com/api/auth/register";
 
 function RegisterForm() {
   const [regDetails, setRegDetails] = useState(initialDetails);
