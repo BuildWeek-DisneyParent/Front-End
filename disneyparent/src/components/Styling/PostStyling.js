@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
-export const CardStyle = styled.div `
+export const PostStyle = styled.div `
+background-color: #fff;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);;
+margin-bottom: 5%;
+width: 500px;
+height: 300px;
+display: flex;
+flex-flow: column;
+align-items: center;
+justify-content: center;
+
 margin-left:-15%;
 width: 649px;
 height: 600px;
@@ -21,7 +31,7 @@ height: 40px;
 left: 1088px;
 top: 766px;
 font-size: 1.8rem;
-margin-left: 5%;
+margin-top: 5%;
 background: #8BD8D2;
 }
 .btn1 {
@@ -45,9 +55,8 @@ background: #8BD8D2;
 }
 .second {
     display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+   flex-flow: column;
+   align-items: center;
 }
 
 p {
@@ -68,4 +77,16 @@ border: 1px solid #000000;
 .cardinfo {
     margin-bottom: 15%;
 }
+`
+
+export const PostsStyle = styled.div `
+display: flex;
+flex-flow: column;
+align-items: center;
+justify-content: center;
+
+`
+export const Style = styled.section `
+display: flex;
+
 `

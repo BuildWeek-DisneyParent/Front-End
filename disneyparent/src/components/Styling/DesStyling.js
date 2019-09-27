@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const DesStyle = styled.div `
+width: 20%;
 h4 {
     font-weight: normal;
     font-size: 1.8rem;

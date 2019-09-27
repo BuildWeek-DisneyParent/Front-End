@@ -10,16 +10,17 @@ import twitter from './components/img/twitter.png';
 import facebook from './components/img/facebook.png';
 import github from './components/img/github.png';
 import {Link} from "react-router-dom";
+import {AboutStyle} from "./components/Styling/AboutStyling";
 
 export const About = () => {
     return (
-        <body>
+        <AboutStyle>
 
     <header>
-    <Link to="/home"><img src={title} alt="Disney Parent logo" /></Link>
+    <Link to="/"><img className="logo" src={title} alt="Disney Parent logo" /></Link>
 
         <nav>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
             <a href="/register">Sign Up</a>
             <a href="/login">Sign In</a>
         </nav>  
@@ -111,13 +112,13 @@ export const About = () => {
     </div>
 
     <nav>
-        <Link to ="/home">Home</Link>
+        <Link to ="/">Home</Link>
         <a href="/register">Sign Up</a>
         <a href="/login">Sign In</a>
     </nav>
 
     <p>Team Disney Parent 2019</p>
 </footer>
-</body>
+</AboutStyle>
     )
 }

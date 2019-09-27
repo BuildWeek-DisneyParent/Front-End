@@ -7,9 +7,7 @@ import { Home } from "./Home";
 import { About } from "./About";
 import { Route } from 'react-router-dom'
 import './App.css';
-
 import Posts from './components/Posts';
-
 import RegisterForm from './components/Register';
 import LoginForm from './components/Login';
 import VBORegisterForm from './components/VBORegister';
@@ -29,10 +27,10 @@ function App() {
         render={() => <EditProfile />} />
       <Route
         path="/acceptedrequests"
-        render={() => <AcceptedCards />} />
+        render={() => <RequestCards />} />
       <Route
         path="/availablerequests"
-        render={() => <RequestCards />} />
+        render={() => <Posts />} />
 
       <Route 
         path="/register"
