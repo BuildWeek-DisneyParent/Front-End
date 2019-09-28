@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import { Button } from "reactstrap";
 import styled from "styled-components";
-import axios from "axios";
+// import axios from "axios";
 // import * as Yup from "yup";
 
 import registerBackground from "./img/registerBackground.png";
